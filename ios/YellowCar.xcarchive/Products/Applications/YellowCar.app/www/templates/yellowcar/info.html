@@ -1,0 +1,32 @@
+<ion-modal-view> 
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title"> {{language.Information}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+
+    <ion-content class="info_app" ng-controller="InfoCtrl" ng-click="closemenumodal('disablemap')">
+         <div ng-if="(Page.details_ar && lng=='ar') || (Page.details_en && lng=='en')" compile="Page['details_'+lng]"></div>
+          <div class="info_banner"></div>  
+    <div class="padding">  
+    <div class="social_link">
+        <p ng-click="openlink('https://www.facebook.com/cabksa')">
+        <span class="face"><i class="ion-social-facebook"></i></span>
+        {{language.vaifacebbok}}
+        </p>
+
+        <p ng-click="openlink('https://twitter.com/cabksa')">
+        <span class="twitter"><i class="ion-social-twitter"></i></span>
+        {{language.vaitwitter}}
+        </p>
+
+       <p ng-click="openlink('https://www.instagram.com/cabksa')">
+        <span class="instagram"><i class="ion-social-instagram-outline"></i></span>
+        {{language.vaitInstagram}}
+        </p>
+    </div>
+    <p class="share_txt">{{language.shareapp}} </p> 
+    <button class="button button-block main_btn bg_color"ng-click="shareapp()">{{language.clickhere}}</button>
+    </div>
+    </ion-content>
+</ion-modal-view>

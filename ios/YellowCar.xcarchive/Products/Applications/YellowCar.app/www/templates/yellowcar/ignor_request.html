@@ -1,0 +1,26 @@
+<div class="bg_modal">
+    <ion-modal-view class="choose_resons">
+        <ion-header-bar class="modal_head bg_color">
+            <h1 class="title">{{language.cancel_request}}</h1>
+        </ion-header-bar>
+        <ion-content class="ignor_request padding">
+            <p ng-show="check_LimitCanceltrip(CurrentTripData.tripAcceptDate)" style="color: red;text-align: center;">{{language.CancelCostLabel}}{{CurrentTripData.cancellationFees}} {{language.EGP}} {{language.CancelCostLabel1}}</p>
+            <div class="resons_div radio_style" ng-repeat="item in Reasons">
+                <input type="radio" ng-model="ignoreReason.value" id="Reason{{item.reasonId}}" name="radio" ng-value="{{item.reasonId}}">
+                    <label for="Reason{{item.reasonId}}"><span></span>{{item['reasonName_'+language.lang]}}</label>
+                    </div>
+        </ion-content>
+        <ion-footer-bar class="ignor_footer">
+            <div class="row two_btn">
+                <div class="col">
+                    <a  ng-disabled="disable_ignorbtn" ng-click="cancelTrip(ignoreReason.value)"
+                        class="button button-block main_btn bg_color">{{language.ok}}</a>
+                </div>
+                <div class="col">
+                    <!--openpath()-->
+                    <a  ng-click="closeignor_request();" class="button button-block main_btn sec_bg">{{language.cancel}}</a>
+                </div>
+            </div>
+        </ion-footer-bar>
+    </ion-modal-view>
+</div>

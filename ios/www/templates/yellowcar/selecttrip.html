@@ -1,0 +1,28 @@
+<ion-modal-view class="select_trip">
+    <ion-header-bar class="modal_head bg_color">
+        <h1 class="title">{{language.selecttrip}} </h1>
+        <span class="close_modal" ng-click="closeselecttrip()"><i class="ion-close"></i></span>
+    </ion-header-bar>
+    <ion-content class="choice trip_type" scroll="false">
+       <div class="select_type">
+        <ion-list>
+            <ion-item ng-click="active_item(1);closeselecttrip();" ng-class="{'color_item':tripType==1}">
+                <img src="{{imgfolder}}001.png"/>
+                <p>{{language.placetoplace}} </p>
+            </ion-item>
+            <ion-item ng-click="active_item(2);closeselecttrip();" ng-class="{'color_item':tripType==2}">
+                <img src="{{imgfolder}}002.png"/>
+                <p>{{language.outsidecity}}</p>
+            </ion-item>
+            <ion-item ng-click="active_item(3);closeselecttrip();" ng-class="{'color_item':tripType==3}">  
+                <img src="{{imgfolder}}003.png"/>
+                <p>{{language.Airport}}</p>
+            </ion-item>
+            <ion-item ng-click="active_item(4);closeselecttrip();" ng-class="{'color_item':tripType==4}">
+                <img src="{{imgfolder}}004.png"/>
+                <p>{{language.Perhour}}</p>                
+            </ion-item>
+        </ion-list>
+       </div>
+    </ion-content>
+  </ion-modal-view>

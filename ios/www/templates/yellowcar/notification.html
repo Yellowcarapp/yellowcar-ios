@@ -1,0 +1,21 @@
+<ion-modal-view   >
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title"> {{language.Notify}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>   
+
+  <ion-content class="notificate_list padding" ng-controller="notifyCtrl"  ng-click="closemenumodal('disablemap')">
+   <p class="no_notification" ng-if="StopLoadMoreNotify && NotifyList.length==0">{{language.no_notification}}</p>
+      <ion-list>
+            <ion-item ng-repeat="item in NotifyList">
+                <p>{{item.notMsg}} </p>
+                <span class="main_color"><i class="ion-ios-time-outline"></i>{{ReturnLocalTime(item.notDate)}}</span>
+            </ion-item>
+        </ion-list>
+        <!--<div class="imgNodata">
+            <img ng-if="NotifyList.length==0&&StopLoadMoreNotify" ng-src="{{imgfolder}}no-data.png" width="100%"/>
+        </div>-->
+        <ion-infinite-scroll ng-if="!StopLoadMoreNotify" on-infinite="download_list()" distance="2%"></ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>

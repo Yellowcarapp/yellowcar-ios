@@ -1,0 +1,90 @@
+<ion-modal-view   >
+    <ion-header-bar class="bar-stable bg_color" >
+        <button  ng-if="show_tripDtails" class="button button-icon button-clear back_modal" ng-click="close_trip_detail()">
+          <i ng-if="lng=='ar'" class="ion-chevron-left"></i>
+          <i  ng-if="lng!='ar'"class="ion-chevron-right"></i>
+        </button>
+        <h1 class="title" ng-if="!show_tripDtails" > {{language.History}}</h1>
+        <h1 class="title" ng-if="show_tripDtails" > {{language.details}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+
+   <ion-content class="padding"  ng-controller="HistoryCtrl"  ng-click="closemenumodal('disablemap')">
+       <div ng-if="!show_tripDtails">
+            <div class="history_cont" ng-repeat="item in List">
+            <div class="history_img"  style="background:url({{item.link}})no-repeat; background-size:cover;">
+                <p class="status main_color">{{TripStatus(item)}}</p>
+                <p class="status">{{TripStatus(item)}}</p>
+                <p class="offer" ng-if="item.offerId>0">{{language.offer}} {{item.offerMaxValue}}
+                    <i ng-if="item.payBy!='cash'" class="ion-card"></i>
+                    <i ng-if="item.payBy=='cash'"  class="ion-cash"></i>
+                </p>
+                <img ng-src="{{(item.driverImage)?path_img_large+item.driverImage:imgfolder+'profile_img.png'}}">
+                <div class="del_edit">
+                        <span class="bg_color" ng-show="CanDelete(item)" ng-click="DeleteTrip(item)">{{language.Delete}}</span>
+                        <span class="sec_bg" ng-show="CanDelete(item,true)" ng-click="EditTripLater(item)">{{language.Edittrip}}</span>
+                </div>
+            </div>
+            <div class="det_history" ng-click="opentrip_detail(item)" >
+                    <p class="date_hist">
+                        <span class="date">{{(item.tripNow==1)?ReturnLocalTime(item.tripCreateDate,true):ReturnLocalTime(item.tripDueDate,true)}}</span>
+                        <span class="main_color">{{item.totaltripCost}}
+                        <i ng-if="item.payBy!='cash'" class="ion-card"></i>
+                        <i ng-if="item.payBy=='cash'"  class="ion-cash"></i>
+                        </span>
+                    </p>
+                    <p class="from_to"><i class="ion-record from_place"></i>{{item.tripFromAddress}}</p>
+                    <p class="from_to"><i class="ion-record"></i>{{(item.tripToAdress=='DESTINATION')?language.Destination:item.tripToAdress}}</p>
+            </div>
+            </div>       
+            <ion-infinite-scroll on-infinite="LoadData()" distance="2%" ng-if="Scroll.active"></ion-infinite-scroll>
+       </div>
+       <div class="trip_detail" ng-if="show_tripDtails">
+            <div class="driver_content">
+                <div class="mapImg"style="background:url({{trip_detail.link}})no-repeat; background-size:100% 100%;" > 
+                    <p class="status">{{TripStatus(trip_detail)}}</p>
+                    <img class="list_image" ng-src="{{(trip_detail.driverImage)?path_img_large+trip_detail.driverImage:imgfolder+'profile_img.png'}}">
+                </div>
+            
+                <div class=" det_history ">
+                    <h3 class="main_color">{{trip_detail.driverFName}} {{trip_detail.driverLName}}</h3>
+                    <div star-rating rating-value="trip_detail.tripRate" max="5" class="rate rate_det" ></div> 
+                    <p class="from_to"><i class="ion-record from_place"></i>{{trip_detail.tripFromAddress}}</p>
+                    <p class="from_to"><i class="ion-record"></i>{{(trip_detail.tripToAdress=='DESTINATION')?language.Destination:trip_detail.tripToAdress}}</p>
+                </div>
+            </div> 
+           <div class="trip_price"> 
+                <div class="data_trip">
+                    <p> {{language.Tripopening}}<span class="main_color">{{trip_detail.tripStart}} {{language.RS}}</span></p>
+                    <p> {{language.tripdistance}}<span class="main_color">{{trip_detail.tripKm}} {{language.KM}}</span></p>
+                    <p> {{language.triptime}}<span class="main_color">{{trip_detail.tripTime}} {{language.MIN}}</span></p>
+                    <p> {{language.waitingtime}}<span class="main_color">{{trip_detail.waitingtime}}  {{language.MIN}}</span></p>
+                    <p> {{language.waitingcost}}<span class="main_color">{{trip_detail.waitingcost}}  {{language.RS}}</span></p>
+                   
+                    <p ng-if="trip_detail.fineCancellation"> {{language.Fine_cancellation}}<span class="main_color">{{trip_detail.fineCancellation}} {{language.RS}}</span></p>
+                    <p ng-if="trip_detail.tripStatus==7"> {{language.cancellationFees}}<span class="main_color">{{trip_detail.cancellationFees}} {{language.RS}}</span></p>
+                    <p ng-if="trip_detail.offerId>0">  {{language.offer}}<span class="main_color">{{trip_detail.offerMaxValue}} {{language.RS}}</span></p>
+                    <!--<p ng-if="trip_detail.offerId>0"> {{language.pay_trip}}<span class="main_color">{{trip_detail.pay_trip}}</span></p>-->
+                </div>
+
+                <div class="sub_total">
+                    <p> {{language.mincost}}<span>{{trip_detail.tripMinCost}} {{language.RS}}</span></p>
+                </div>
+                <div class="sub_total"  >
+                    <!--ng-hide="trip_detail.totaltripCost==trip_detail.tripCost"-->
+                    <!--ng-if="trip_detail.fineCancellation>0"-->
+                    <p> {{language.tripcost}}<span>{{trip_detail.tripCost}}  {{language.RS}}</span></p>
+                </div>
+                <div class="total_trip">
+                    <h3 class="main_color">{{language.totalcost}}</h3>
+                    <p>
+                        <i ng-if="trip_detail.payBy!='cash'" class="ion-card"></i>
+                        <i ng-if="trip_detail.payBy=='cash'"  class="ion-cash"></i>
+                        <span>{{trip_detail.totaltripCost}} {{language.RS}}</span>
+                    </p>
+                </div>
+            </div> 
+       </div>
+  </ion-content>
+</ion-modal-view>

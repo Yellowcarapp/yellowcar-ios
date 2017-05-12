@@ -1,0 +1,80 @@
+ <ion-modal-view>
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title"> {{language.LaterTrip}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+
+    <ion-content class="list_page later_page"  ng-controller="Later"  ng-click="closemenumodal('disablemap')">
+      <div class="search_input">
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                <input type="text"  placeholder="{{language.From}}"  ng-click="ChoosePickUp()" ng-model="SearchBox.from" id="FromSearchBox_later" readonly/>
+            </label>
+            <button class="button button-icon"  ng-click="GetMyFromPosition()">
+               <i class="ion-record"></i>
+            </button>
+        </div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                 <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                <input type="text" placeholder="{{language.to}}" id="ToSearchBox_later"  ng-model="SearchBox.to" ng-click="ToSearchBox()" readonly/>
+            </label>
+            <button class="button button-icon from_tobtn" ng-click="ToSearchBox()">
+              <i class="ion-record"></i>
+            </button>
+        </div>
+      </div>
+        <form name="t" class="select_date app_form">
+          <p ng-show="IsValidDate()" ng-style="{'color':(t.tDate.$dirty && IsValidDate())?'red':''}">{{language.PleaseNote}}</p>    
+          <div class="list">    
+            <label class="item item-input">
+                <input type="datetime-local" ng-model="Date.value" name="tDate" placeholder="When">
+            </label>
+          </div>  
+        </form>
+        
+        <h3>{{language.SelectTripTypeCarLevel}}</h3>
+        <div class="row trip_car">
+            <div class="col bg_color" ng-click="openselecttrip()">
+                <img ng-src="{{triptype_img}}"/>
+            </div>
+            <div class="col sec_bg" ng-click="openselectcar()">
+                <img ng-src="{{HostUrl+'resources/uploads/files/original/'+level_img}}"/>
+                <!--src="{{imgfolder}}car.png" -->
+            </div>
+        </div>
+        <div class="pay_code">
+        <div class="row cash_visa">
+            <div class="col">
+                 
+                <p ng-if="payBy=='cash'"><i ng-if="payBy=='cash'" class="ion-cash"></i>
+                    {{language.Cash}} 
+                    <i class="arr_icon ion-arrow-down-b "></i> 
+                </p>
+                <!--
+                <p ng-if="payBy!='cash'" ng-click="Change_PaymentMethod('Visa')"><i ng-if="payBy!='cash'" class="ion-card"></i>                           {{language.Visa}}
+                    <i class="arr_icon ion-arrow-down-b"></i>
+                </p>
+                -->
+            </div>
+            <div class="col no_set">
+                <span ng-show="ToSearchDiv=='DESTINATION'">{{language.notset}}</span>
+                <span ng-show="ToSearchDiv!='DESTINATION'">{{FareEstimate}} {{language.RS}}</span>
+            </div>
+        </div>
+        <div class="addpromo" ng-click="Popup_addpromo();">
+                <p ><i class="ion-card"></i>{{language.addpromo}}</p>
+        </div>
+        </div>
+            <p ng-show="promo_detail" ng-click="open_promomodal();" class="use_promo">
+                {{language.use_promo}} {{promo_detail.offerMaxValue}} {{language.RS}}
+                <i ng-if="lng=='ar'" class="ion-arrow-left-a"></i>
+                <i ng-if="lng=='en'" class="ion-arrow-right-a"></i>
+            </p>
+        <button class="button button-block main_btn bg_color" ng-click="Save()"
+                ng-disabled="!Date.value || !FromLocation || !ToLocation || IsValidDate()">{{language.GetTaxi}}
+        </button>
+    </ion-content>
+</ion-modal-view>

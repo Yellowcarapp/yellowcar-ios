@@ -1,0 +1,43 @@
+<ion-view view-title="{{language.Specifytrip}}" hide-back-button="true">
+  <ion-content class="choice">
+   <div class="select_type">
+     <h3>{{language.selecttrip}}</h3>
+    <ion-list>
+        <ion-item ng-click="active_item(1)" ng-class="{'color_item':tripType==1}">
+            <img src="{{imgfolder}}001.png"/>
+            <p>{{language.placetoplace}}</p>
+        </ion-item>
+        <ion-item ng-click="active_item(2)" ng-class="{'color_item':tripType==2}">
+            <img src="{{imgfolder}}002.png"/>
+            <p>{{language.outsidecity}}</p>
+        </ion-item>
+        <ion-item ng-click="active_item(3)" ng-class="{'color_item':tripType==3}">  
+            <img src="{{imgfolder}}003.png"/>
+            <p>{{language.Airport}}</p>
+        </ion-item>
+        <ion-item ng-click="active_item(4)" ng-class="{'color_item':tripType==4}">
+            <img src="{{imgfolder}}004.png"/>
+            <p>{{language.Perhour}}</p>
+        </ion-item>
+    </ion-list>
+   </div>
+    <div class="choose_level">
+     <h3>{{language.carlevel}}</h3>
+        <ion-scroll direction="x" class="wide-as-needed">
+            <div class="scroll_item" ng-click="select_item(level)" ng-class="{'color_item':LevelId==level.levelId}" 
+                 ng-repeat="level in Levels">
+                <img ng-if="level.level_img" ng-src="{{HostUrl+'resources/uploads/files/original/'+level.level_img}}"/>
+                <p ng-bind-html="level['levelName_'+lng]"></p>
+            </div>
+        </ion-scroll>
+     <div class="row two_btn">
+         <div class="col">
+             <a class="button button-block main_btn bg_color" ng-click="ChangeTripType(1)">{{language.Now}}</a>
+         </div>
+         <div class="col">
+             <a class="button button-block main_btn sec_color" ng-click="ChangeTripType(0)">{{language.Later}}</a>
+         </div>
+     </div>
+   </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,15 @@
+<ion-modal-view  > 
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title">YellowCar</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+    <ion-content class="padding failed_proc" >
+        <!--hide_requestdiv()-->
+        <img src="{{imgfolder}}no-car.png"/>
+        <div ng-bind-html="language.FailedTrip" class="no_car"></div>
+
+        <a class="button button-block main_btn bg_color" ng-click="gotohome()" >{{language.home}}</a>
+    </ion-content>
+</ion-modal-view>

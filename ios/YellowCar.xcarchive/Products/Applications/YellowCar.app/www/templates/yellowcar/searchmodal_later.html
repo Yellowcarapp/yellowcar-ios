@@ -1,0 +1,10 @@
+<ion-modal-view class="search_modal">
+     <ion-header-bar class="bar bar-stable bg_color">
+        <h1 class="title">{{language.Search}}</h1>
+        <button class="button button-clear cancel_btn" ng-click="closeModal()">{{language.cancel}}</button>
+    </ion-header-bar>
+    <ion-content scroll="false" class="search_content">
+        <ion-google-place placeholder="{{language.address}}" radius="150000" ng-model="data.address" required name="address" 
+            location-changed="locationChangedlater" add-markers="AddToMarker" init-list="MyMarkers" init-list2="PlacesMarkers"/></ion-google-place>
+    </ion-content>
+</ion-modal-view>

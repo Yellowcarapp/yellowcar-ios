@@ -1,0 +1,45 @@
+<ion-modal-view  >
+    <ion-header-bar class="bar-stable bg_color" >
+        <button ng-if="show_newsDtails" class="button button-icon button-clear back_modal" ng-click="close_newsDtails()">
+          <i ng-if="lng=='ar'" class="ion-chevron-left"></i>
+          <i  ng-if="lng!='ar'"class="ion-chevron-right"></i>
+        </button>
+        <h1 class="title" ng-if="!show_newsDtails" > {{language.news}}</h1>
+        <h1 class="title" ng-if="show_newsDtails" > {{language.details}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+   
+   <div ng-show="showdiv_menu" compile="div_menu"></div>
+  <ion-content   ng-controller="newsCtrl"  ng-click="closemenumodal('disablemap')">
+      <ion-refresher  ng-if="!show_newsDtails" on-refresh="doRefresh()"> </ion-refresher>
+    <div class="news_list" ng-show="!show_newsDtails">
+        <div class="news_collection"
+            ng-repeat="item in news_list" ng-click="godetails(item)"> 
+          
+          <div class="row">
+            <div class="col col-25">
+                <img src="{{item.newsImage}}"/>
+            </div>
+            <div class="col col-75">
+                <h3 class="main_color">{{item.newsTitle}}</h3>
+                <p class="date">{{ReturnLocalTime(item.newsDate)}}</p>
+                <p class="news_about">{{item.newsAbout}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="imgNodata"><img ng-if="news_list.length==0&&news.StopLoadMorenews" src="{{imgfolder}}no-data.png"/> </div>
+        <ion-infinite-scroll ng-if="!news.StopLoadMorenews" on-infinite="download_list()" distance="2%"></ion-infinite-scroll>
+    </div>
+    <div class="news_detail" ng-show="show_newsDtails" >
+        <div class="det_img" ng-if="newsDtails.newsImage!=imgfolder+'default_icon.png'">
+            <img ng-src="{{newsDtails.newsImage}}" width="100%"/>
+        </div>
+        <div class="padding">    
+            <h3> {{newsDtails.newsTitle}} </h3>
+            <!--<p class="date">{{ReturnLocalTime(newsDtails.newsDate)}}</p>-->
+            <p> {{newsDtails.newsAbout}} </p>
+            <p id="DetailsHTmlss" ng-bind-html="newsDtails.newsDetails" ></p>
+        </div>
+    </div>
+  </ion-content>
+</ion-view  >

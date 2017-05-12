@@ -1,0 +1,24 @@
+<ion-modal-view class="select_trip promodetail">
+    <ion-header-bar class="modal_head bg_color">
+        <h1 class="title">{{language.promodetail}} </h1>
+        <span class="close_modal" ng-click="closeopen_promomodal()"><i class="ion-close"></i></span>
+    </ion-header-bar>
+    <ion-content class="choice trip_type" scroll="false">
+      <div class="row">
+          <div class="col col-50"> {{language.promocode}} </div>
+          <div class="col col-50"> {{promo_detail.offerText}}  </div>
+      </div>
+     <div class="row">
+          <div class="col col-50"> {{language.value}} </div>
+          <div class="col col-50"> {{promo_detail.offerMaxValue}}   {{language.RS}}</div>
+      </div>
+     <div class="row">
+          <div class="col col-50"> {{language.ExpireDate}} </div>
+          <div class="col col-50"> {{promo_detail.offerExpireDate}}  </div>
+      </div>
+      <div class="row">
+          <div class="col col-50"> {{language.details}} </div>
+          <div class="col col-50"><p ng-bind-html="promo_detail.offerDetails"></p> </div>
+      </div>
+    </ion-content>
+  </ion-modal-view>

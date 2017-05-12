@@ -1,0 +1,86 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title"> {{language.Profile}}</h1>
+        <button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+   <ion-content class="profile_page"  ng-controller="ProfileCtrl"  ng-click="closemenumodal('disablemap')">
+    <div class="profil_img">
+       <img class="cir_img" ng-if="!Obj.passengerImage" src="{{imgfolder}}profile_img.png"/>
+       <img class="cir_img" ng-if="Obj.passengerImage" ng-src="{{path_img_large}}{{Obj.passengerImage}}"/>
+       <h3 ng-if="Obj">{{Obj.passengerName}}</h3>
+       <p ng-click="getPhoto()">{{language.Editphoto}}</p>
+    </div>
+        <form name="RegForm" class="app_form">
+       
+       <div class="row">
+            <div class="col">
+                <span>{{language.fullname}}</span>
+                <label class="item item-input" ng-style="{'border':((RegForm.passengerName.$invalid && RegForm.passengerName.$dirty) || !NameIsValid)?'1px solid red':'1px solid #ccc'}">
+                    <input focus type="text" ng-model="Obj.passengerName" required   name="passengerName" minlength="8" placeholder="{{language.namevaild}}"/>
+                </label>
+            </div>
+                <div class="col col-10">
+                <i class="ion-checkmark-circled"  ng-style="{'color':(RegForm.passengerName.$valid)?'#dea930':(RegForm.passengerName.$invalid &&RegForm.passengerName.$dirty?'#aaa':'')}"></i>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col">
+        <span>{{language.email}}</span>
+        <label class="item item-input" ng-style="{'border':(RegForm.passengerEmail.$invalid && RegForm.passengerEmail.$dirty)?'1px solid red':'1px solid #ccc'}">
+        <input focus type="email" ng-blur="CheckEmail()" ng-model="Obj.passengerEmail" 
+                
+               required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="passengerEmail"
+               ng-class="{'inputcolor':(RegForm.passengerEmail.$valid && EmailIsValid)?'#00b8b8':((RegForm.passengerEmail.$invalid && RegForm.passengerEmail.$dirty) || (Obj.passengerEmail.length>0 && !EmailIsValid)?'#E00000':'')}">
+        </label>
+        <p class="note" ng-if="Obj.passengerEmail.length>0 && !EmailIsValid">{{language.emailexit}}</p>
+        </div>
+             <div class="col col-10">
+                <i class="ion-checkmark-circled"  ng-style="{'color':(RegForm.passengerEmail.$valid)?'#dea930':(RegForm.passengerEmail.$invalid &&RegForm.passengerEmail.$dirty?'#aaa':'')}"></i>
+            </div>
+          </div>
+
+        <div class="row">
+        <div class="col">
+        <span>{{language.pass}}</span>
+        
+        <label class="item item-input" ng-style="{'border':(RegForm.passengerPass.$invalid && RegForm.passengerPass.$dirty)?'1px solid red':'1px solid #ccc'}">
+        <input focus type="password" placeholder="{{language.passvaild}}" ng-model="Obj.passengerPass" 
+               ng-required="Obj.passengerPass.length>0" pattern=".{8,}" name="passengerPass"
+               ng-class="{'inputcolor':(RegForm.passengerPass=='' || RegForm.passengerPass.$valid)?'#00b8b8':(RegForm.passengerPass.$invalid && RegForm.passengerPass.$dirty?'#E00000':'')}">
+        </label>
+        <p class="note">{{language.noch_pass}}</p>
+        </div>
+             <div class="col col-10">
+                <i class="ion-checkmark-circled"  ng-style="{'color':(RegForm.passengerPass.$valid)?'#dea930':(RegForm.passengerPass.$invalid &&RegForm.passengerPass.$dirty?'#aaa':'')}"></i>
+            </div>
+          </div>
+       <div class="row">
+        <div class="col">
+        <span>{{language.Mobile}}</span>
+        <label class="item item-input">
+            <input type="tel"  disabled  ng-model="Obj.passengerMobile">
+            
+        </label>
+        </div>
+       </div>
+        <div class="row">
+        <div class="col">
+        <span>{{language.city}}</span>
+        <label class="item item-input item-select sel_inp">
+           <select ng-model="Obj.passengerCityId" required 
+             ng-options="item.cityId as item['cityName_'+lng] for item in cities|filter:{countryId:Obj.passengerCountryId} ">
+            </select>
+        </label>
+        </div>
+        </div>
+       
+        <a ng-click="updateprofile()" class="button button-block main_btn bg_color" ng-disabled="RegForm.$invalid  || !EmailIsValid">{{language.save}}</a> 
+          
+        <p class="note" ng-show="ErrorMessage">{{ErrorMessage}}</p>
+        
+      </form>
+  </ion-content>
+  
+</ion-view>

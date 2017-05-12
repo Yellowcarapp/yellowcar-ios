@@ -1,0 +1,28 @@
+
+<ion-view view-title="{{language.Verifmobile}}" hide-nav-bar="true">
+  <ion-content class="verify_code main_bg">
+      <form name="RegForm" class="app_form">
+           <img src="{{imgfolder}}lock.png" class="lock_img"/>
+            <h3>{{language.enter_verifcode}}</h3>
+            <label class="item item-input">
+                <input type="tel" pattern=".{6}" name="userVerifyCode" ng-model="verifyformData.userVerifyCode" placeholder="{{language.activecode}}"
+                       ng-class="{'inputcolor':(RegForm.userVerifyCode.$valid)?'#00b8b8':(RegForm.userVerifyCode.$invalid && RegForm.userVerifyCode.$dirty?'#E00000':'')}" required >
+            </label>
+
+            <button ladda="loading" data-style="expand-left" ng-disabled="RegForm.$invalid" ng-click="CheckActivationCode()" 
+                    class="button button-block main_btn bg_color">{{language.Activate}}</button>
+            <p class="code">{{language.enter_code}}<span>{{user_data.passengerMobile}}</span>
+            <!--{{user_data.countryTel}}-->
+            </p>
+            <div class="row">
+                <div class="col">
+                    <a class="button button-block main_btn bg_color" ng-click="changePhone()">{{language.changemobile}}</a>
+                </div>
+                <div class="col">
+                    <a class="button button-block main_btn sec_bg" href="#/app/register">{{language.cancel}}</a>
+                </div>
+            </div>
+      </form>
+        
+  </ion-content>
+</ion-view>

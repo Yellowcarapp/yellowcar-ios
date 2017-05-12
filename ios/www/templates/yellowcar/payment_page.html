@@ -1,0 +1,44 @@
+<ion-modal-view  > 
+    <ion-header-bar class="bar-stable bg_color" >
+        <h1 class="title"> </h1>
+        <!--<button class="button button-icon button-clear ion-navicon open_menu" ng-click="openmenumodal()"></button>-->
+    </ion-header-bar>  
+    <div ng-show="showdiv_menu" compile="div_menu"></div>
+    <ion-content class="pay_page" ng-controller="payment_page"> <!--ng-click="closemenumodal('disablemap')"-->
+        <div class="row time_distance">
+           <div class="col">
+            <i class="ion-android-alarm-clock main_color"></i>
+            <p>{{Payment_Page.tripTime}} {{language.MIN}}</p>
+           </div>
+            <div class="col">
+                <i class="ion-location main_color"></i>
+                <p ng-if="Payment_Page.tripKm>0">{{Payment_Page.tripKm}} {{language.KM}}</p>
+                <p ng-if="Payment_Page.tripKm<=0">0 {{language.KM}}</p>
+           </div>
+        </div>
+        <div class="cost">
+          <p>{{language.tripcost}}<span class="main_color">{{Payment_Page.tripCost}} {{language.RS}}</span></p>
+          <p ng-if="Payment_Page.fineCancellation>0"> {{language.Fine_cancellation}}<span>{{Payment_Page.fineCancellation}} {{language.RS }}</span></p>
+          <p ng-show="Payment_Page.offerId">{{language.promocode}}<span class="main_color">{{Payment_Page.offerMaxValue}} {{language.RS}}</span></p>
+          <!--<p ng-show="Payment_Page.offerId">{{language.Payment}}<span class="main_color">{{(Payment_Page.offerMaxValue >= Payment_Page.tripCost)?'0':Payment_Page.tripCost-Payment_Page.offerMaxValue}} {{language.RS}}</span></p>-->
+          <p ng-if="Payment_Page.fineCancellation>0 || Payment_Page.offerId>0">{{language.totalcost}}<span class="main_color">{{Payment_Page.totaltripCost}} {{language.RS}}</span></p>
+        </div>
+        
+        <p class="tit_pay sec_bg">{{language.choose_pay}} {{language[Payment_Page.payBy]}}</p>
+        <div class="driver_rate ">
+            <div ><p>{{language.RateDriver}}</p></div>
+            <div ><p>{{Payment_Page.driverFName + ' ' + Payment_Page.driverLName }}</p></div>
+            <div class=" rating">
+                 <div set-rating rating-value="rating.rating" max="5" ></div>
+            </div>
+        </div>
+        <div class="padding">
+            <label class="item item-input txt_area_desgin">
+                <textarea rows="4" placeholder="{{language.Comment}}" ng-model="rating.comment"></textarea>
+            </label>  
+        </div>    
+    </ion-content>
+    <ion-footer-bar class="footer_modal">
+        <a   ng-click="close_payment()" class="button button-block sec_bg main_btn">{{language.send}}</a>
+    </ion-footer-bar>
+</ion-modal-view>

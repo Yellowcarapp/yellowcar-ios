@@ -1,0 +1,54 @@
+
+<ion-view cache-view="false">
+    <ion-content class="login_page main_bg" >
+        <h3 class="main_color">{{language.startnow}}</h3>
+        <p>{{language.freelogin}}</p>
+<!-- <span>{{language.youraccount}}</span>-->
+    <form class="app_form">
+        <div class="list list-inset">
+            <p class="choose_lang">{{language.chooselng}}</p> 
+            <label class="item item-input item-select sel_inp lng_sel border_color">
+                <select ng-model="lng" ng-change="change_lng(lng)">
+                    <option  value="ar" ng-selected="lng=='ar'"> {{language.arabic}}</option>
+                    <option  value="en" ng-selected="lng=='en'"> {{language.english}}</option>
+                </select>
+
+            </label>
+
+            <label class="item item-input">
+                <input  maxlength="{{Config.mobilelength}}" autofocus type="tel" placeholder="{{language.Mobile}}" ng-model="formData.passengerMobile" >
+            </label>
+       
+            <label class="item item-input">
+                <i class="icon ion-lock-combination"></i>
+                <input type="password" placeholder="{{language.pass}}" ng-model="formData.passengerPass">
+            </label>
+            
+            <div class="row two_btn">
+                <div class="col col-50">
+                    <button class="button button-block main_btn bg_color" ng-click="LogIn()">{{language.bt_login}}</button> 
+                </div>
+                <div class="col col-50">
+                    <a href="#/app/register" class="button button-block main_btn sec_bg" >{{language.new_user}}</a> 
+                </div>
+            </div>
+            
+            <p ng-click="changepassword()" class="forget_psw">{{language.forgetPassword}}</p>
+
+            <!--<button class="button button-block main_btn bg_color" ng-click="LogIn()">{{language.bt_login}}</button>   
+            <p ng-click="changepassword()" class="forget_psw">{{language.forgetPassword}}</p>-->
+            <!--<p  class="reg_btn">{{language.Registerhere}}<a class="main_color" href="#/app/register">{{language.new_user}}</a></p>-->
+
+            
+<!--
+            <p class="or"> {{language.or}}</p>
+            <button class="button button-block button-positive face_btn" ng-click="FaceBook()">
+                {{language.loginfacebook}}
+                <span><i class="ion-social-facebook"></i></span>
+            </button>
+-->
+          
+        </div>
+    </form>
+  </ion-content>
+</ion-view>

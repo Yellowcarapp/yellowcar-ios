@@ -1,0 +1,146 @@
+<ion-view view-title="YellowCar" >
+     <div ng-show="showdiv_menu" compile="div_menu"></div>
+    <ion-content class="map_page" scroll="false" ng-click="closemenumodal();">
+        <div id="map_canvas" class="map_can"  ng-style="{'height':height}">
+             <!--ng-click="hide_requestdiv()"-->
+             <div class="search_input padding" ng-hide="HideFromSearchBox">
+                 <div class="item">        
+                    <p class="loc_txt">{{language.pickuplocation}}</p>
+                    <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                            <input type="text" placeholder="{{language.From}}" id="FromSearchBox" readonly/>
+                        </label>
+                        <button class="button button-icon">
+                            <i class="ion-record"></i>
+                        </button>
+                    </div>
+                 </div>  
+                 <div class="item">        
+                    <p class="loc_txt">{{language.dropofflocation}}</p>
+                    <div class="item-input-inset">
+                        <label class="item-input-wrapper">
+                            <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                            <input type="text" placeholder="{{language.to}}" id="ToSearchBox" readonly/>
+                        </label>
+                        <button class="button button-icon from_tobtn">
+                          <i class="ion-record"></i>
+                        </button>
+                    </div>
+                  </div>     
+            </div> 
+            <div class="trip_type" ng-hide="HideFromSearchBox">
+            <div class="trip_car">
+                <p>{{language.TripType}}</p>
+                <span class="trip_cir bg_color" id="openselecttrip">
+                    <img ng-src="{{triptype_img}}"/> 
+                </span>
+            </div>
+            </div>
+            
+            <img ng-hide="true" class="pin_img" ng-src="{{imgfolder}}pin.png" width="40" height="55"  id="PinItem" ng-hide="HideFromSearchBox"/>
+            <img  ng-src="{{imgfolder}}mylocation.png" class="mylocation" id="MyLocation"/>
+            <div id="dropback" ng-show="ShowSearchLoading">
+                <div class="loading-custom"></div>
+            </div>
+             <div class="info_design" ng-hide="HideFromSearchBox" id="StartTripNow">
+                    <div class="info_window">
+                        <div class="info_data row">
+                        <div class="col col-20" ng-show="TimeToCome !='لا توجد سيارات' && TimeToCome !='No Cars Found' ">
+                            <span class="cir_time" ng-bind-html="TimeToCome" ng-show="!ShowSpinner">
+                                <span>11</span>{{language.MIN}}
+                            </span>
+                            <ion-spinner  icon="android"  ng-show="ShowSpinner"></ion-spinner>
+                        </div>
+                        <div class="col">
+                                <p ng-show="TimeToCome !='لا توجد سيارات' && TimeToCome !='No Cars Found'" >{{language.StartTripNow}}</p>
+                                <p ng-show="TimeToCome =='لا توجد سيارات' || TimeToCome =='No Cars Found' "  ng-bind-html="TimeToCome"></p>
+                                <!--<img ng-src="{{imgfolder}}loading.gif" class="loading" ng-show="ShowSpinner"/>-->
+                        </div>
+                    </div>
+                 </div>
+                 <span class="traingle"></span>
+              </div>
+            </div>
+        </div>
+          <div class="car_scroll" ng-show="show_levels" id="div_levels">
+            <ion-scroll direction="x" class="wide-as-needed">
+                <div class="car_type" ng-repeat="level in Levels" ng-click="closeselectcar();select_item(level)" 
+                    ng-class="{'color_item':LevelId==level.levelId}" >
+                    <img ng-if="level.levelImageactive && LevelId==level.levelId" ng-src="{{HostUrl+'resources/uploads/files/original/'+level.levelImageactive}}"/>
+                <img ng-if="level.level_img && LevelId!=level.levelId" ng-src="{{HostUrl+'resources/uploads/files/original/'+level.level_img}}"/>
+                <h3 ng-bind-html="level['levelName_'+lng]"></h3>
+            </div>
+            </ion-scroll>    
+        </div>
+         <div  id="div_request" ng-show="show_div_request" ng-class="{'show_div':show_div_request}">
+            <div class="row est_cost">
+           <div class="col col-33">
+                <!--ng-click="Change_PaymentMethod('cash')"-->
+                <p ng-if="payBy=='cash'" ><i class="ion-cash"></i>{{language.Cash}}
+                 <!--<span class="select_payment"><i class="ion-arrow-down-b"></i></span>--></p> 
+                <!--<p ng-if="payBy!='cash'" ng-click="Change_PaymentMethod('Visa')"><i class="ion-card"></i>{{language.Visa}}<span class="select_payment"><i class="ion-arrow-down-b"></i></span></p> -->
+            </div>
+            <div class="col col-67">
+               <p class="sec_color" ng-show="ToSearchDiv!='DESTINATION'">{{language.Tripfare}}<span>{{FareEstimate}} {{language.RS}}</span></p> 
+                <p class="sec_color" ng-show="ToSearchDiv=='DESTINATION'">{{language.NotChoose}}</p>
+                <!--<p class="sec_color" ng-show="ToSearchDiv=='DESTINATION'">{{language.Tripfare}}<span>{{language.NotChoose}}</span></p> -->
+            </div>
+            </div>
+             <div class="row est_cost previousCancel" ng-if="user_data.passengerCredit && user_data.passengerCredit>0">
+                 <p>{{language.previousCancelCost}} {{user_data.passengerCredit}} {{language.RS}}</p>
+            </div>
+            <div class="row promo_code">
+            <div class="col col-33" ng-show="!promo_detail"  ng-click="Popup_addpromo();">
+                <p class="sec_color">{{language.promocode}}</p> 
+            </div>
+            <div class="col col-50" ng-show="promo_detail" ng-click="open_promomodal();"   > 
+                <p class="sec_color"  >{{language.promoadded}} <span>{{promo_detail.offerMaxValue}} {{language.RS}}</span></p> 
+            </div>
+
+            <div class="col addtrip" ng-disable="disableNewTrip" ng-click="AddNewTrip()">
+                <!--<p>{{language.order}} {{language.car}}</p> -->
+                    <p ng-if="lng=='en'">{{language.order}} {{levelName['levelName_'+lng]}} {{language.car}}</p> 
+                    <p ng-if="lng=='ar'">{{language.order}} {{language.car}} {{levelName['levelName_'+lng]}} </p> 
+            </div>
+            </div>
+        </div>
+
+        <div  ng-show="show_pathdiv" ng-class="{'show_div':show_detailpath}">
+            <div  id="pathdiv" class="driver_detail" ng-click="check_show_detailpath()">
+             <img ng-show="CurrentTripData.driverImage" ng-src="{{path_img_large}}{{CurrentTripData.driverImage}}"/>
+             <img  ng-src="{{imgfolder}}driverimg.png" ng-show="!CurrentTripData.driverImage" /> 
+                <h3>{{CurrentTripData.brandName}} - {{CurrentTripData.modelTitle}} - {{CurrentTripData.carColor}} 
+                 <span class="car_num">{{CurrentTripData.carNumber}} - {{CurrentTripData.carNumber2}}</span>
+               </h3>
+                
+             <!--<h3>{{CurrentTripData.driverFName + ' ' + CurrentTripData.driverLName }}
+                 <span><i class="ion-star"></i>{{CurrentTripData.driverRate}}</span>
+             </h3>-->
+             <p>{{getPathMsg(PathMsg)}}</p>
+             <!--<p class="previousCancel" ng-if="user_data.passengerCredit && user_data.passengerCredit>0">{{language.previousCancelCost}}  {{user_data.passengerCredit}} {{language.RS}}</p>-->
+
+            </div>
+        
+            <div ng-show="show_detailpath" ng-class="{'animated fadeIn':three_part}">
+            <div class="row three_part">
+                <div class="col col-33 car_name" ng-class="{'col-50':Hide_Cancel}" >
+                    <p>{{CurrentTripData.driverFName + ' ' + CurrentTripData.driverLName }}
+                       <span><i class="ion-star"></i>{{CurrentTripData.driverRate}}</span>
+                     </p>                 
+                   <!--<p>{{CurrentTripData.brandName}} - {{CurrentTripData.modelTitle}} 
+                        <span class="main_color">{{CurrentTripData.carNumber}} {{CurrentTripData.carNumber2}} - {{CurrentTripData.carColor}}</span>
+                    </p>-->
+               </div>
+               <div  class="col col-33 call_btn" ng-class="{'col-50':Hide_Cancel}" >
+                   <p ng-click="Call(CurrentTripData.driverMobile)" ng-if="CurrentTripData.tripStatus!=5">{{language.Call}}</p>
+                   <p  ng-click="Call(Config.CallCenter,'CallCenter')" ng-if="CurrentTripData.tripStatus==5">{{language.Call}}</p>
+               </div> 
+               <div class="col col-33 cancel_btn" ng-click="openignor_request()" ng-hide="Hide_Cancel">
+                   <p >{{language.Cancelorder}}</p>
+               </div>     
+            </div>
+            </div>    
+        </div>
+    </ion-content>
+</ion-view>

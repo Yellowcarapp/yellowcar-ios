@@ -1,0 +1,19 @@
+<ion-modal-view class="select_trip">
+    <ion-header-bar class="modal_head bg_color">            
+        <h1 class="title">{{language.carlevel}}</h1>
+        <span class="close_modal" ng-click="closeselectcar()"><i class="ion-close"></i></span>
+    </ion-header-bar>
+    <ion-content class="choice trip_type select_car">
+       <div class="select_type">
+            <ion-list>
+                <ion-item ng-repeat="level in Levels" ng-click="closeselectcar();select_item(level)" 
+                        ng-class="{'color_item':LevelId==level.levelId}" >
+                    <img ng-if="level.level_img" ng-src="{{HostUrl+'resources/uploads/files/original/'+level.level_img}}"/>
+                    <h3 ng-bind-html="level['levelName_'+lng]"></h3>
+                    <!--<p>{{language.Minfare}}:{{level.minNow}}{{language.RS}}<span class="main_color">{{language.for}}:{{level.levelSeats}} </span></p>-->
+
+                </ion-item>
+            </ion-list>
+       </div>
+    </ion-content>
+</ion-modal-view>

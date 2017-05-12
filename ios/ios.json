@@ -1,0 +1,828 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"ios-package\" value=\"APPBackgroundMode\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GoogleMaps\"><param name=\"ios-package\" value=\"GoogleMaps\" /><param name=\"onload\" value=\"true\" /><param name=\"onreset\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"External\"><param name=\"ios-package\" value=\"External\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geocoder\"><param name=\"ios-package\" value=\"Geocoder\" /></feature>",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<feature name=\"Map\"><param name=\"ios-package\" value=\"Map\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Circle\"><param name=\"ios-package\" value=\"Circle\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GroundOverlay\"><param name=\"ios-package\" value=\"GroundOverlay\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"KmlOverlay\"><param name=\"ios-package\" value=\"KmlOverlay\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Marker\"><param name=\"ios-package\" value=\"Marker\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Polygon\"><param name=\"ios-package\" value=\"Polygon\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Polyline\"><param name=\"ios-package\" value=\"Polyline\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"TileOverlay\"><param name=\"ios-package\" value=\"TileOverlay\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Insomnia\"><param name=\"ios-package\" value=\"Insomnia\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundGeolocation\"><param name=\"ios-package\" value=\"CDVBackgroundGeolocation\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" value=\"CDVStatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"UniqueDeviceID\"><param name=\"ios-package\" value=\"CDVUniqueDeviceID\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"ios-package\" value=\"CDVVibration\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Toast\"><param name=\"ios-package\" value=\"Toast\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Diagnostic\"><param name=\"ios-package\" value=\"Diagnostic\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CallNumber\"><param name=\"ios-package\" value=\"CFCallNumber\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"ios-package\" value=\"OneSignalPush\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>audio</string></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><string>location</string></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><string>remote-notification</string></array>",
+                            "count": 1
+                        }
+                    ],
+                    "NSCameraUsageDescription": [
+                        {
+                            "xml": "<string> </string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSPhotoLibraryUsageDescription": [
+                        {
+                            "xml": "<string> </string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<string>$NSLocationWhenInUseUsageDescription</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string>This app will now only track your location when the screen is on and the app is displayed.</string>",
+                            "count": 1
+                        }
+                    ],
+                    "Google Maps API Key": [
+                        {
+                            "xml": "<string>AIzaSyCV2I10CaDtILqXyigNHz7NL7CQikCPblM</string>",
+                            "count": 1
+                        }
+                    ],
+                    "NSLocationAlwaysUsageDescription": [
+                        {
+                            "xml": "<string>$NSLocationAlwaysUsageDescription</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string>This app requires background location tracking</string>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<string>This app requires constant access to your location in order to track your position, even when the screen is off.</string>",
+                            "count": 1
+                        }
+                    ],
+                    "LSApplicationQueriesSchemes": [
+                        {
+                            "xml": "<array><string>googlechromes</string><string>comgooglemaps</string></array>",
+                            "count": 1
+                        }
+                    ],
+                    "CFBundleURLTypes": [
+                        {
+                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>passenger.yellowcar.com</string><key>CFBundleURLSchemes</key><array><string>passenger.yellowcar.com</string></array></dict></array>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLSchemes</key><array><string>prefs</string></array></dict></array>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Debug.plist": {
+                "parents": {
+                    "aps-environment": [
+                        {
+                            "xml": "<string>development</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Release.plist": {
+                "parents": {
+                    "aps-environment": [
+                        {
+                            "xml": "<string>production</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-background-mode": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "com.googlemaps.ios": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_IOS": "AIzaSyCV2I10CaDtILqXyigNHz7NL7CQikCPblM",
+            "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
+            "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-insomnia": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-mauron85-background-geolocation": {
+            "ALWAYS_USAGE_DESCRIPTION": "This app requires background location tracking",
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-uniquedeviceid": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "cordova.plugins.diagnostic.api-22": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "nl.codeyellow.wifi-access": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "passenger.yellowcar.com"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-device.device",
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-background-mode.BackgroundMode",
+            "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+            "pluginId": "cordova-plugin-background-mode",
+            "clobbers": [
+                "cordova.plugins.backgroundMode",
+                "plugin.backgroundMode"
+            ]
+        },
+        {
+            "id": "cordova-plugin-camera.Camera",
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "Camera"
+            ]
+        },
+        {
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "CameraPopoverOptions"
+            ]
+        },
+        {
+            "id": "cordova-plugin-camera.camera",
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "navigator.camera"
+            ]
+        },
+        {
+            "id": "cordova-plugin-camera.CameraPopoverHandle",
+            "file": "plugins/cordova-plugin-camera/www/ios/CameraPopoverHandle.js",
+            "pluginId": "cordova-plugin-camera",
+            "clobbers": [
+                "CameraPopoverHandle"
+            ]
+        },
+        {
+            "id": "cordova-plugin-console.console",
+            "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+            "pluginId": "cordova-plugin-console",
+            "clobbers": [
+                "console"
+            ]
+        },
+        {
+            "id": "cordova-plugin-console.logger",
+            "file": "plugins/cordova-plugin-console/www/logger.js",
+            "pluginId": "cordova-plugin-console",
+            "clobbers": [
+                "cordova.logger"
+            ]
+        },
+        {
+            "id": "cordova-plugin-datepicker.DatePicker",
+            "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+            "pluginId": "cordova-plugin-datepicker",
+            "clobbers": [
+                "datePicker"
+            ]
+        },
+        {
+            "id": "cordova-plugin-dialogs.notification",
+            "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+            "pluginId": "cordova-plugin-dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.DirectoryEntry",
+            "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.DirectoryEntry"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.DirectoryReader",
+            "file": "plugins/cordova-plugin-file/www/DirectoryReader.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.DirectoryReader"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.Entry",
+            "file": "plugins/cordova-plugin-file/www/Entry.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.Entry"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.File",
+            "file": "plugins/cordova-plugin-file/www/File.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.File"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileEntry",
+            "file": "plugins/cordova-plugin-file/www/FileEntry.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileEntry"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileError",
+            "file": "plugins/cordova-plugin-file/www/FileError.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileReader",
+            "file": "plugins/cordova-plugin-file/www/FileReader.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileReader"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileSystem",
+            "file": "plugins/cordova-plugin-file/www/FileSystem.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileSystem"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileUploadOptions",
+            "file": "plugins/cordova-plugin-file/www/FileUploadOptions.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileUploadOptions"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileUploadResult",
+            "file": "plugins/cordova-plugin-file/www/FileUploadResult.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileUploadResult"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.FileWriter",
+            "file": "plugins/cordova-plugin-file/www/FileWriter.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.FileWriter"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.Flags",
+            "file": "plugins/cordova-plugin-file/www/Flags.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.Flags"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.LocalFileSystem",
+            "file": "plugins/cordova-plugin-file/www/LocalFileSystem.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.LocalFileSystem"
+            ],
+            "merges": [
+                "window"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.Metadata",
+            "file": "plugins/cordova-plugin-file/www/Metadata.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.Metadata"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.ProgressEvent",
+            "file": "plugins/cordova-plugin-file/www/ProgressEvent.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.ProgressEvent"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.fileSystems",
+            "file": "plugins/cordova-plugin-file/www/fileSystems.js",
+            "pluginId": "cordova-plugin-file"
+        },
+        {
+            "id": "cordova-plugin-file.requestFileSystem",
+            "file": "plugins/cordova-plugin-file/www/requestFileSystem.js",
+            "pluginId": "cordova-plugin-file",
+            "clobbers": [
+                "window.requestFileSystem"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.resolveLocalFileSystemURI",
+            "file": "plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js",
+            "pluginId": "cordova-plugin-file",
+            "merges": [
+                "window"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.isChrome",
+            "file": "plugins/cordova-plugin-file/www/browser/isChrome.js",
+            "pluginId": "cordova-plugin-file",
+            "runs": true
+        },
+        {
+            "id": "cordova-plugin-file.iosFileSystem",
+            "file": "plugins/cordova-plugin-file/www/ios/FileSystem.js",
+            "pluginId": "cordova-plugin-file",
+            "merges": [
+                "FileSystem"
+            ]
+        },
+        {
+            "id": "cordova-plugin-file.fileSystems-roots",
+            "file": "plugins/cordova-plugin-file/www/fileSystems-roots.js",
+            "pluginId": "cordova-plugin-file",
+            "runs": true
+        },
+        {
+            "id": "cordova-plugin-file.fileSystemPaths",
+            "file": "plugins/cordova-plugin-file/www/fileSystemPaths.js",
+            "pluginId": "cordova-plugin-file",
+            "merges": [
+                "cordova"
+            ],
+            "runs": true
+        },
+        {
+            "id": "cordova-plugin-geolocation.Coordinates",
+            "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Coordinates"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.PositionError",
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "PositionError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.Position",
+            "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Position"
+            ]
+        },
+        {
+            "id": "cordova-plugin-geolocation.geolocation",
+            "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
+        },
+        {
+            "id": "cordova-plugin-googlemaps.cordova-plugin-googlemaps",
+            "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
+            "pluginId": "cordova-plugin-googlemaps",
+            "clobbers": [
+                "cordova-plugin-googlemaps"
+            ]
+        },
+        {
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        },
+        {
+            "id": "cordova-plugin-insomnia.Insomnia",
+            "file": "plugins/cordova-plugin-insomnia/www/Insomnia.js",
+            "pluginId": "cordova-plugin-insomnia",
+            "clobbers": [
+                "window.plugins.insomnia"
+            ]
+        },
+        {
+            "id": "cordova-plugin-mauron85-background-geolocation.backgroundGeolocation",
+            "file": "plugins/cordova-plugin-mauron85-background-geolocation/www/backgroundGeolocation.js",
+            "pluginId": "cordova-plugin-mauron85-background-geolocation",
+            "clobbers": [
+                "backgroundGeolocation"
+            ]
+        },
+        {
+            "id": "cordova-plugin-media.MediaError",
+            "file": "plugins/cordova-plugin-media/www/MediaError.js",
+            "pluginId": "cordova-plugin-media",
+            "clobbers": [
+                "window.MediaError"
+            ]
+        },
+        {
+            "id": "cordova-plugin-media.Media",
+            "file": "plugins/cordova-plugin-media/www/Media.js",
+            "pluginId": "cordova-plugin-media",
+            "clobbers": [
+                "window.Media"
+            ]
+        },
+        {
+            "id": "cordova-plugin-network-information.network",
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "id": "cordova-plugin-network-information.Connection",
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
+            ]
+        },
+        {
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "id": "cordova-plugin-statusbar.statusbar",
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+            "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+            "pluginId": "cordova-plugin-uniquedeviceid",
+            "merges": [
+                "window.plugins.uniqueDeviceID"
+            ]
+        },
+        {
+            "id": "cordova-plugin-vibration.notification",
+            "file": "plugins/cordova-plugin-vibration/www/vibration.js",
+            "pluginId": "cordova-plugin-vibration",
+            "merges": [
+                "navigator.notification",
+                "navigator"
+            ]
+        },
+        {
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
+        },
+        {
+            "id": "cordova-plugin-x-toast.Toast",
+            "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+            "pluginId": "cordova-plugin-x-toast",
+            "clobbers": [
+                "window.plugins.toast"
+            ]
+        },
+        {
+            "id": "cordova-plugin-x-toast.tests",
+            "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+            "pluginId": "cordova-plugin-x-toast"
+        },
+        {
+            "id": "cordova.plugins.diagnostic.api-22.Diagnostic",
+            "file": "plugins/cordova.plugins.diagnostic.api-22/www/ios/diagnostic.js",
+            "pluginId": "cordova.plugins.diagnostic.api-22",
+            "clobbers": [
+                "cordova.plugins.diagnostic"
+            ]
+        },
+        {
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
+        },
+        {
+            "id": "mx.ferreyra.callnumber.CallNumber",
+            "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
+            "pluginId": "mx.ferreyra.callnumber",
+            "clobbers": [
+                "call"
+            ]
+        },
+        {
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-device": "1.1.3",
+        "cordova-plugin-background-mode": "0.6.5",
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-camera": "2.3.0",
+        "cordova-plugin-console": "1.0.4",
+        "cordova-plugin-datepicker": "0.9.3",
+        "cordova-plugin-dialogs": "1.3.0",
+        "cordova-plugin-file": "4.3.0",
+        "cordova-plugin-geolocation": "2.3.0",
+        "com.googlemaps.ios": "2.1.1",
+        "cordova-plugin-googlemaps": "1.4.0",
+        "cordova-plugin-inappbrowser": "1.5.0",
+        "cordova-plugin-insomnia": "4.2.0",
+        "cordova-plugin-mauron85-background-geolocation": "2.2.5",
+        "cordova-plugin-media": "2.4.0",
+        "cordova-plugin-network-information": "1.3.0",
+        "cordova-plugin-splashscreen": "4.0.0",
+        "cordova-plugin-statusbar": "2.2.0",
+        "cordova-plugin-uniquedeviceid": "1.3.2",
+        "cordova-plugin-vibration": "2.1.2",
+        "cordova-plugin-whitelist": "1.3.0",
+        "cordova-plugin-x-socialsharing": "5.1.3",
+        "cordova-plugin-x-toast": "2.5.0",
+        "cordova.plugins.diagnostic.api-22": "2.3.10-api-22",
+        "ionic-plugin-keyboard": "1.0.8",
+        "mx.ferreyra.callnumber": "0.0.2",
+        "nl.codeyellow.wifi-access": "0.1",
+        "onesignal-cordova-plugin": "2.0.8"
+    }
+}
